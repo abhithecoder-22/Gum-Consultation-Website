@@ -11,8 +11,15 @@ import cert2 from "@/assets/Certified-2.jpeg";
 import cert3 from "@/assets/Certified-3.png";
 import cert4 from "@/assets/Certified-4.jpeg";
 
+interface Certificate {
+  id: number;
+  title: string;
+  issuer: string;
+  image: any; // StaticImageData from Next.js
+}
+
 // Certificate images - using actual certificate images from assets
-const certificates = [
+const certificates: Certificate[] = [
   {
     id: 1,
     title: "Postpartum Fitness Specialist",
@@ -40,9 +47,9 @@ const certificates = [
 ];
 
 const AchievementsSection = () => {
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
 
-  const openModal = (cert) => {
+  const openModal = (cert: Certificate) => {
     setSelectedCertificate(cert);
   };
 
