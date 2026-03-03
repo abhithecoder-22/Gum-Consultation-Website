@@ -1,26 +1,290 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* =========================
+   CSS VARIABLES / TOKENS
+========================= */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 15 10% 8%;
+    --foreground: 30 15% 92%;
+
+    --card: 15 8% 12%;
+    --card-foreground: 30 15% 92%;
+
+    --popover: 15 8% 12%;
+    --popover-foreground: 30 15% 92%;
+
+    --primary: 16 85% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 6% 18%;
+    --secondary-foreground: 30 15% 92%;
+
+    --muted: 15 5% 16%;
+    --muted-foreground: 20 8% 55%;
+
+    --accent: 16 85% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 15 6% 20%;
+    --input: 15 6% 20%;
+    --ring: 16 85% 52%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 15 10% 8%;
+    --sidebar-foreground: 30 15% 92%;
+    --sidebar-primary: 16 85% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 6% 18%;
+    --sidebar-accent-foreground: 30 15% 92%;
+    --sidebar-border: 15 6% 20%;
+    --sidebar-ring: 16 85% 52%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(15 10% 8%) 0%,
+      hsl(16 30% 12%) 50%,
+      hsl(15 10% 8%) 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(15 8% 14%) 0%,
+      hsl(15 8% 10%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(16 85% 52%) 0%,
+      hsl(8 80% 48%) 100%
+    );
+    --shadow-glow: 0 0 30px hsl(16 85% 52% / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --font-sans: var(--font-inter);
+  --font-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  --font-display: var(--font-poppins);
+  --radius: var(--radius);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-size: 16px;
+    font-weight: 600;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h1 {
+    @apply font-bold;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* =========================
+   COMPONENT UTILITIES
+========================= */
+@layer components {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-border/50 rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+    box-shadow: 0 0 0 hsl(var(--primary) / 0);
+  }
+
+  .glow-button:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .section-label {
+    @apply text-sm font-medium uppercase tracking-widest text-primary mb-3;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .tag-pill {
+    @apply px-4 py-2 rounded-full border border-primary/30 text-sm text-primary bg-primary/5 transition-colors hover:bg-primary/10;
+  }
+
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms, transform 200ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+    transform: scale(1.05);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+  .read-the-docs {
+    color: #888;
+  }
+}
+
+/* =========================
+   ANIMATION HELPERS
+========================= */
+.pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.btn-pulse:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* subtle lift for cards */
+.glass-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Make common interactive elements show pointer cursor */
+button,
+[role="button"],
+a[href],
+.glow-button,
+.tag-pill {
+  cursor: pointer;
+}
+
+/* helper class for clickable elements added in JS/React where no semantic tag exists */
+.clickable {
+  cursor: pointer;
+}
+
+/* Stronger fallback to override any resets */
+:where(button, [role="button"], a[href], .glow-button, .tag-pill, .clickable) {
+  cursor: pointer !important;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes counter-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* =========================
+   GLOBAL BEHAVIOR
+========================= */
+/* Fallback container utility (centers sections when Tailwind container isn't applied)
+   Components already use `className="container px-4"` — this ensures they remain centered */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  /* keep container neutral; per-section centering will be applied in components */
+}
+
+html {
+  scroll-behavior: smooth;
 }
