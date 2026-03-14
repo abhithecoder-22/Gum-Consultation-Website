@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -15,7 +15,12 @@ interface NavbarProps {
 
 const Navbar = ({ onBookConsultation }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const getNavLink = (item: string) => {
     if (item === "Programs") return "/programs";
@@ -23,8 +28,9 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
   };
 
   const isActive = (item: string) => {
+    if (!mounted) return false;
     if (item === "Programs") return pathname === "/programs";
-    return false; // For other items, we could add more complex logic if needed
+    return false;
   };
 
   return (
@@ -32,7 +38,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/30"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-xl border-b border-border/20"
     >
       <div className="  flex items-center justify-between py-4 px-4">
         <a href="/" className="flex items-center gap-2 text-primary font-display text-2xl">

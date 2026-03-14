@@ -10,7 +10,7 @@ interface CTASectionProps {
 
 const CTASection = ({ onBookConsultation }: CTASectionProps) => {
   return (
-    <section id="cta" className="py-24 bg-secondary/30 relative overflow-hidden">
+    <section id="cta" className="py-24 bg-secondary/10 relative overflow-hidden">
       {/* Subtle animated bg glow */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl"
@@ -22,8 +22,7 @@ const CTASection = ({ onBookConsultation }: CTASectionProps) => {
         <ScrollReveal>
           <h2 className="font-display text-5xl md:text-7xl mb-6">START YOUR FITNESS TRANSFORMATION</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            Take the first step toward achieving your fitness goals from home. Book a consultation
-            and discover personalized training programs designed for your lifestyle and objectives.
+            Take the first step toward your fitness goals. Book a consultation and discover personalized training programs for your lifestyle.
           </p>
           <button
             onClick={onBookConsultation}

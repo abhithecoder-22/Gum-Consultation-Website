@@ -35,28 +35,20 @@ const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0" 
-        style={{
-          background: `radial-gradient(ellipse 120% 100% at 80% 60%, 
-            hsl(25, 60%, 18%) 0%,
-            hsl(20, 50%, 14%) 15%,
-            hsl(15, 45%, 10%) 35%,
-            hsl(10, 35%, 8%) 55%,
-            hsl(5, 25%, 6%) 75%,
-            hsl(0, 10%, 5%) 90%,
-            hsl(0, 0%, 4%) 100%)`
-        }}
-      />
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-to-br from-background via-secondary/20 to-background">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-primary/5 blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+      </div>
 
       {/* Hero image - right side */}
       <motion.div
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute right-0 top-0 bottom-0 w-full md:w-[50%] pointer-events-none"
+        className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] pointer-events-none"
       >
         {/* <div className="relative w-full h-full"> */}
           <Image
@@ -67,16 +59,18 @@ const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
             style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)", objectPosition: "center top" }}
           />
         {/* </div> */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/30 to-transparent pointer-events-none" />
       </motion.div>
 
-      <div className=" relative z-10 px-4 py-20">
-        <div className="max-w-xl md:max-w-2xl">
+      {/* Subtle overlay for text area only */}
+      <div className="absolute left-0 top-0 bottom-0 w-[35%] bg-gradient-to-r from-background/40 via-background/20 to-transparent pointer-events-none" />
+
+      <div className=" relative z-10 px-4 py-10 w-full md:w-[45%]">
+        <div className="max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-6 md:font-semibold"
+            className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-6 md:font-semibold text-foreground"
           >
             {displayedText.split('\n').map((line, index) => (
               <div key={index}>
@@ -100,7 +94,7 @@ const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-muted-foreground text-lg mb-8 max-w-md"
           >
-            Achieve your fitness goals from the comfort of your home with personalized training programs designed by certified professionals. Build strength, improve health, and transform your lifestyle.
+            Transform your fitness journey from home with expert-designed programs tailored to your goals and lifestyle.
           </motion.p>
 
           <motion.div

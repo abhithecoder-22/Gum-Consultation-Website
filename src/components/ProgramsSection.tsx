@@ -2,12 +2,11 @@
 
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
-import { Check, X, ArrowRight } from "lucide-react";
+import { Check, X } from "lucide-react";
 import servicePersonal from "@/assets/service-personal.jpg";
 import serviceClasses from "@/assets/service-classes.jpg";
-import serviceFunctional from "@/assets/service-functional.jpg";
-import gymVideoThumb from "@/assets/gym-video-thumb.jpg";
-import whyChoose from "@/assets/why-choose.jpg";
+import plans_1 from "@/assets/plans_1.png";
+import plans_2 from "@/assets/plans_2.png";
 
 interface ProgramsSectionProps {
   onBookConsultation: () => void;
@@ -18,8 +17,8 @@ const programs = [
     id: 1,
     title: "Post Pregnancy Fat Loss",
     category: "12 WEEK PROGRAM",
-    image: servicePersonal,
-    description: "Specifically designed for women who want to lose post-pregnancy weight while rebuilding core strength and confidence.",
+    image: plans_1,
+    description: "Designed for women to lose post-pregnancy weight while rebuilding core strength and confidence.",
     whatsIncluded: [
       "12-week customized training plan",
       "Nutrition guidance & meal planning",
@@ -27,8 +26,8 @@ const programs = [
       "Progress tracking & adjustments",
       "Online support & check-ins"
     ],
-    expectedOutcome: "Lose 8-12kg of post-pregnancy weight while gaining strength and confidence",
-    commitment: "3-4 training sessions per week + nutrition adherence",
+    expectedOutcome: "Lose 8-12kg while gaining strength and confidence",
+    commitment: "3-4 sessions per week + nutrition adherence",
     price: "₹18,000",
     duration: "12 weeks"
   },
@@ -36,8 +35,8 @@ const programs = [
     id: 2,
     title: "Hormonal Fat Loss Coaching",
     category: "10 WEEK PROGRAM",
-    image: serviceClasses,
-    description: "Targeted program for women experiencing hormonal weight gain, focusing on sustainable fat loss and hormonal balance.",
+    image: plans_2,
+    description: "Targeted program for hormonal weight gain, focusing on sustainable fat loss and hormonal balance.",
     whatsIncluded: [
       "10-week hormonal-focused plan",
       "Hormone-balancing nutrition",
@@ -45,8 +44,8 @@ const programs = [
       "Sleep optimization guidance",
       "Bi-weekly coaching calls"
     ],
-    expectedOutcome: "Balanced hormones, sustainable fat loss of 6-10kg, improved energy levels",
-    commitment: "4 training sessions per week + lifestyle adjustments",
+    expectedOutcome: "Balanced hormones, 6-10kg fat loss, improved energy",
+    commitment: "4 sessions per week + lifestyle adjustments",
     price: "₹16,000",
     duration: "10 weeks"
   },
@@ -54,8 +53,8 @@ const programs = [
     id: 3,
     title: "1-on-1 Home Personal Training",
     category: "MONTHLY PROGRAM",
-    image: serviceFunctional,
-    description: "Private, personalized training sessions conducted in the comfort of your home with professional equipment.",
+    image: servicePersonal,
+    description: "Private, personalized training sessions in your home with professional equipment.",
     whatsIncluded: [
       "8-12 personal training sessions/month",
       "Home gym equipment provided",
@@ -63,8 +62,8 @@ const programs = [
       "Form correction & technique training",
       "Flexible scheduling"
     ],
-    expectedOutcome: "Achieve your fitness goals with consistent progress and professional guidance",
-    commitment: "2-3 sessions per week based on your goals",
+    expectedOutcome: "Achieve fitness goals with consistent progress and guidance",
+    commitment: "2-3 sessions per week based on goals",
     price: "₹8,000",
     duration: "per month"
   },
@@ -72,8 +71,8 @@ const programs = [
     id: 4,
     title: "Executive Fitness Coaching",
     category: "MONTHLY PROGRAM",
-    image: whyChoose,
-    description: "Time-efficient fitness programs designed for busy professionals who need results without sacrificing their career.",
+    image: serviceClasses,
+    description: "Time-efficient fitness programs for busy professionals needing results without career sacrifice.",
     whatsIncluded: [
       "HIIT & strength training programs",
       "Time-efficient 30-45 min workouts",
@@ -81,7 +80,7 @@ const programs = [
       "Stress management for executives",
       "Priority scheduling"
     ],
-    expectedOutcome: "Improved energy, better stress management, maintained fitness despite busy schedule",
+    expectedOutcome: "Improved energy, stress management, maintained fitness",
     commitment: "3-4 sessions per week, 30-45 minutes each",
     price: "₹12,000",
     duration: "per month"
@@ -109,7 +108,7 @@ const ProgramsSection = ({ onBookConsultation }: ProgramsSectionProps) => {
             TRANSFORM YOUR FITNESS: <span className="gradient-text">PROFESSIONAL TRAINING PLANS</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            Transform Your Body with Structured Coaching. No shortcuts. No crash diets. No random workouts. Each program is designed with a clear structure, realistic timeline, and proven methodology for sustainable fat loss.
+            Structured coaching with proven methodology for sustainable fat loss. No shortcuts, just results.
           </p>
         </ScrollReveal>
 
@@ -119,7 +118,7 @@ const ProgramsSection = ({ onBookConsultation }: ProgramsSectionProps) => {
             <ScrollReveal key={program.id} delay={index * 0.1}>
               <div className="glass-card overflow-hidden group hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
                 {/* Program Image */}
-                <div className="relative h-64 overflow-hidden flex-shrink-0">
+                <div className="relative h-[36rem] overflow-hidden flex-shrink-0">
                   <Image
                     fill
                     src={program.image}
@@ -208,7 +207,7 @@ const ProgramsSection = ({ onBookConsultation }: ProgramsSectionProps) => {
                 </thead>
                 <tbody>
                   {comparisonFeatures.map((feature, index) => (
-                    <tr key={feature.name} className={`border-b border-border/10 ${index % 2 === 0 ? 'bg-secondary/20' : ''}`}>
+                    <tr key={feature.name} className={`border-b border-border/10 ${index % 2 === 0 ? 'bg-secondary/5' : ''}`}>
                       <td className="py-3 px-4 font-medium">{feature.name}</td>
                       {feature.programs.map((included, i) => (
                         <td key={i} className="text-center py-3 px-4">

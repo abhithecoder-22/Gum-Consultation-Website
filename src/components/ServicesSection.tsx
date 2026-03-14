@@ -38,7 +38,7 @@ const ServicesSection = () => {
   const visible = services.slice(page * pageSize, page * pageSize + pageSize);
 
   return (
-    <section id="programs" className="py-24 bg-secondary/30">
+    <section id="programs" className="py-24 bg-secondary/10">
       <div className="  px-4">
         <div className="mb-6">
           <ScrollReveal>
@@ -47,8 +47,7 @@ const ServicesSection = () => {
               TRANSFORM YOUR FITNESS: <span className="gradient-text">PROFESSIONAL TRAINING PROGRAMS</span> FROM HOME
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Comprehensive wellness programs designed specifically for mothers at every stage.
-              From postpartum recovery to sustainable lifestyle changes, we provide the support you need.
+              Comprehensive wellness programs designed for mothers at every stage.
             </p>
           </ScrollReveal>
         </div>

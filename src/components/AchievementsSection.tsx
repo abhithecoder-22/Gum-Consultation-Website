@@ -123,10 +123,10 @@ const AchievementsSection = () => {
       {/* Modal for full certificate view */}
       {selectedCertificate && (
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 md:p-4" onClick={closeModal}>
-          <div className="relative max-w-5xl max-h-[95vh] w-full bg-white rounded-lg overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-5xl max-h-[95vh] w-full bg-card rounded-lg overflow-hidden shadow-2xl border" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+              className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-muted hover:bg-muted/80 text-muted-foreground rounded-full p-2 transition-colors"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
@@ -138,9 +138,9 @@ const AchievementsSection = () => {
                 className="object-contain"
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-3 md:p-4">
+            <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-sm text-card-foreground p-3 md:p-4 border-t">
               <h3 className="font-semibold text-lg md:text-xl mb-1">{selectedCertificate.title}</h3>
-              <p className="text-gray-300 text-sm md:text-base">{selectedCertificate.issuer}</p>
+              <p className="text-muted-foreground text-sm md:text-base">{selectedCertificate.issuer}</p>
             </div>
           </div>
         </div>

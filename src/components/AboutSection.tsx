@@ -51,10 +51,7 @@ const AboutSection = () => {
             PROFESSIONAL <span className="gradient-text">HOME FITNESS</span> TRAINING
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            As a certified fitness professional with years of experience in home-based training, I specialize
-            in creating personalized fitness programs that fit your lifestyle. ProTrainrAtHome was founded
-            to bring professional gym-quality training directly to your home, making it easier than ever
-            to achieve your fitness goals without leaving your comfort zone.
+            As a certified fitness professional, I create personalized home training programs that fit your lifestyle. ProTrainrAtHome brings professional gym-quality training to your home for convenient, effective results.
           </p>
         </ScrollReveal>
 

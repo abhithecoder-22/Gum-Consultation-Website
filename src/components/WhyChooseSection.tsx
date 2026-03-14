@@ -8,10 +8,10 @@ import Image from "next/image";
 import whyChooseImg from "@/assets/why-choose.jpg";
 
 const items = [
-  { icon: Dumbbell, title: "Safe, Science-Based Training", content: "Evidence-based programs designed specifically for postpartum recovery and women's health, ensuring safe and effective progress at every stage." },
-  { icon: Users, title: "Flexible Scheduling for Busy Moms", content: "Online sessions and at-home programs that fit your family schedule, with no gym commitments or rigid class times." },
-  { icon: LayoutGrid, title: "Customized Programs", content: "Every program is tailored to your unique needs, whether you're postpartum, managing hormonal changes, or building sustainable habits." },
-  { icon: Heart, title: "Supportive Community", content: "Connect with other mothers on similar journeys through our private online community, sharing experiences and celebrating wins together." },
+  { icon: Dumbbell, title: "Safe, Science-Based Training", content: "Evidence-based programs for postpartum recovery and women's health, ensuring safe progress at every stage." },
+  { icon: Users, title: "Flexible Scheduling for Busy Moms", content: "Online sessions and at-home programs that fit your family schedule with no gym commitments." },
+  { icon: LayoutGrid, title: "Customized Programs", content: "Every program is tailored to your unique needs, whether postpartum or building sustainable habits." },
+  { icon: Heart, title: "Supportive Community", content: "Connect with other mothers through our private online community, sharing experiences and celebrating wins." },
 ];
 
 const WhyChooseSection = () => {
