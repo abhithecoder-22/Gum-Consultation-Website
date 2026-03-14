@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import logoImg from "@/assets/protrianrathome-logo.png";
 
 const navItems = ["About Us", "Programs", "Training Plans", "Contact Us"];
@@ -14,6 +15,17 @@ interface NavbarProps {
 
 const Navbar = ({ onBookConsultation }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getNavLink = (item: string) => {
+    if (item === "Programs") return "/programs";
+    return `#${item.toLowerCase().replace(" ", "-")}`;
+  };
+
+  const isActive = (item: string) => {
+    if (item === "Programs") return pathname === "/programs";
+    return false; // For other items, we could add more complex logic if needed
+  };
 
   return (
     <motion.nav
@@ -23,7 +35,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/30"
     >
       <div className="  flex items-center justify-between py-4 px-4">
-        <a href="#" className="flex items-center gap-2 text-primary font-display text-2xl">
+        <a href="/" className="flex items-center gap-2 text-primary font-display text-2xl">
           <div className="relative w-14 h-14 md:w-16 md:h-16">
             <Image
               src={logoImg}
@@ -41,8 +53,12 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={item === "Programs" ? "/programs" : `#${item.toLowerCase().replace(" ", "-")}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              href={getNavLink(item)}
+              className={`text-sm transition-colors ${
+                isActive(item)
+                  ? "text-primary font-semibold"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {item}
             </a>
@@ -72,8 +88,12 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={item === "Programs" ? "/programs" : `#${item.toLowerCase().replace(" ", "-")}`}
-              className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
+              href={getNavLink(item)}
+              className={`block py-3 transition-colors ${
+                isActive(item)
+                  ? "text-primary font-semibold"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {item}
