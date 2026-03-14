@@ -56,10 +56,10 @@ const AboutSection = () => {
         </ScrollReveal>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 items-stretch">
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={i * 0.1}>
-              <div className="glass-card p-6 text-center">
+              <div className="glass-card p-6 text-center h-full flex flex-col justify-center">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 <p className="text-muted-foreground text-sm mt-2">{stat.label}</p>
               </div>
