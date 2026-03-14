@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logoImg from "@/assets/protrianrathome-logo.png";
 
@@ -41,7 +42,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-xl border-b border-border/20"
     >
       <div className="  flex items-center justify-between py-4 px-4">
-        <a href="/" className="flex items-center gap-2 text-primary font-display text-2xl">
+        <Link href="/" className="flex items-center gap-2 text-primary font-display text-2xl">
           <div className="relative w-14 h-14 md:w-16 md:h-16">
             <Image
               src={logoImg}
@@ -52,12 +53,12 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
             />
           </div>
           {/* <span className="hidden sm:block">MomFitConsult</span> */}
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
               href={getNavLink(item)}
               className={`text-sm transition-colors ${
@@ -67,7 +68,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
               }`}
             >
               {item}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -92,7 +93,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border/30 px-4 pb-4"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
               href={getNavLink(item)}
               className={`block py-3 transition-colors ${
@@ -103,7 +104,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
               onClick={() => setIsOpen(false)}
             >
               {item}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => { setIsOpen(false); onBookConsultation(); }}

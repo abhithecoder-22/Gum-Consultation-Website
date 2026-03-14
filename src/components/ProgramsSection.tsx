@@ -118,12 +118,12 @@ const ProgramsSection = ({ onBookConsultation }: ProgramsSectionProps) => {
             <ScrollReveal key={program.id} delay={index * 0.1}>
               <div className="glass-card overflow-hidden group hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
                 {/* Program Image */}
-                <div className="relative h-[36rem] overflow-hidden flex-shrink-0">
+                <div className="relative h-[20rem] md:h-[36rem] overflow-hidden flex-shrink-0">
                   <Image
                     fill
                     src={program.image}
                     alt={program.title}
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary/90 text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">

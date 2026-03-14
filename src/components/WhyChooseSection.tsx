@@ -22,7 +22,7 @@ const WhyChooseSection = () => {
       <div className="  px-4">
         <ScrollReveal>
           <p className="section-label">Why Choose Us</p>
-          <h2 className="font-display text-4xl md:text-6xl mb-12">
+          <h2 className="font-display text-4xl md:text-6xl mb-12 break-words md:break-normal">
             WHY CLIENTS CHOOSE <span className="gradient-text">PROTRAINRATHOME</span>
           </h2>
         </ScrollReveal>
