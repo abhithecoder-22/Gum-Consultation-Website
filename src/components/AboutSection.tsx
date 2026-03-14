@@ -46,15 +46,15 @@ const AboutSection = () => {
     <section id="about-us" className="py-24 relative">
       <div className="container  px-4">
         <ScrollReveal>
-          <p className="section-label">About MomFitConsult</p>
+          <p className="section-label">About ProTrainrAtHome</p>
           <h2 className="font-display text-4xl md:text-6xl mb-6">
-            YOUR <span className="gradient-text">WELLNESS</span> JOURNEY AS A MOTHER
+            PROFESSIONAL <span className="gradient-text">HOME FITNESS</span> TRAINING
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            As a certified fitness coach specializing in women's health and a mother myself, I understand
-            the unique challenges of balancing motherhood with personal wellness. MomFitConsult was born
-            from my own postpartum journey and the desire to support other mothers in reclaiming their
-            strength, confidence, and joy.
+            As a certified fitness professional with years of experience in home-based training, I specialize
+            in creating personalized fitness programs that fit your lifestyle. ProTrainrAtHome was founded
+            to bring professional gym-quality training directly to your home, making it easier than ever
+            to achieve your fitness goals without leaving your comfort zone.
           </p>
         </ScrollReveal>
 

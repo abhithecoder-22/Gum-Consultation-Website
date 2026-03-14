@@ -12,7 +12,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
   const [displayedText, setDisplayedText] = useState("");
-  const fullText = "Empower Your\nMotherhood Journey";
+  const fullText = "Transform Your\nFitness Journey";
 
   useEffect(() => {
     let index = 0;
@@ -100,7 +100,7 @@ const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-muted-foreground text-lg mb-8 max-w-md"
           >
-            Reclaim your strength and confidence through personalized fitness programs designed specifically for mothers. From postpartum recovery to building lasting wellness habits.
+            Achieve your fitness goals from the comfort of your home with personalized training programs designed by certified professionals. Build strength, improve health, and transform your lifestyle.
           </motion.p>
 
           <motion.div
@@ -113,7 +113,7 @@ const HeroSection = ({ onBookConsultation }: HeroSectionProps) => {
               onClick={onBookConsultation}
               className="glow-button inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all"
             >
-              Book a Free Consultation <ArrowRight className="w-4 h-4" />
+              Book Consultation <ArrowRight className="w-4 h-4" />
             </button>
             <button className="inline-flex items-center gap-3 text-foreground group">
               <span className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">

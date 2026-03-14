@@ -20,10 +20,10 @@ const CTASection = ({ onBookConsultation }: CTASectionProps) => {
 
       <div className="  px-4 relative z-10 text-center">
         <ScrollReveal>
-          <h2 className="font-display text-5xl md:text-7xl mb-6">START YOUR JOURNEY AS A MOM</h2>
+          <h2 className="font-display text-5xl md:text-7xl mb-6">START YOUR FITNESS TRANSFORMATION</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            Take the first step toward reclaiming your strength and confidence. Book a free consultation
-            and discover personalized wellness programs designed specifically for mothers.
+            Take the first step toward achieving your fitness goals from home. Book a consultation
+            and discover personalized training programs designed for your lifestyle and objectives.
           </p>
           <button
             onClick={onBookConsultation}

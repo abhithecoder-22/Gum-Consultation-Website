@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import logoImg from "@/assets/protrianrathome-logo.png";
 
-const navItems = ["About Us", "Services", "FAQ"];
+const navItems = ["About Us", "Programs", "Training Plans", "Contact Us"];
 
 interface NavbarProps {
   onBookConsultation: () => void;
@@ -27,7 +27,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           <div className="relative w-14 h-14 md:w-16 md:h-16">
             <Image
               src={logoImg}
-              alt="MomFitConsult"
+              alt="ProTrainrAtHome"
               fill
               style={{ objectFit: "contain" }}
               className="rounded-md"
@@ -41,7 +41,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Programs" ? "/programs" : `#${item.toLowerCase().replace(" ", "-")}`}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item}
@@ -53,7 +53,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           onClick={onBookConsultation}
           className="hidden md:inline-flex glow-button px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
         >
-          Book My Consultation
+          Book Consultation
         </button>
 
         {/* Mobile toggle */}
@@ -72,7 +72,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Programs" ? "/programs" : `#${item.toLowerCase().replace(" ", "-")}`}
               className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
@@ -83,7 +83,7 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
             onClick={() => { setIsOpen(false); onBookConsultation(); }}
             className="block w-full mt-2 text-center glow-button px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold"
           >
-            Book My Consultation
+            Book Consultation
           </button>
         </motion.div>
       )}

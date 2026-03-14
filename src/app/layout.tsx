@@ -14,13 +14,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MomFitConsult - Postpartum Fitness & Wellness for Mothers",
-  description: "Specialized fitness consulting for mothers focusing on postpartum recovery, strength training, and holistic wellness. Transform your health journey with expert guidance.",
-  keywords: "postpartum fitness, mothers fitness, women's health, wellness coaching, strength training, pelvic floor, nutrition",
-  authors: [{ name: "MomFitConsult" }],
+  title: "ProTrainrAtHome - Professional Home Fitness Training",
+  description: "Expert home fitness training programs and personalized training plans. Transform your fitness journey from the comfort of your home with professional guidance.",
+  keywords: "home fitness training, personal training, fitness programs, workout plans, home gym, fitness coaching",
+  authors: [{ name: "ProTrainrAtHome" }],
   openGraph: {
-    title: "MomFitConsult - Postpartum Fitness & Wellness for Mothers",
-    description: "Specialized fitness consulting for mothers focusing on postpartum recovery, strength training, and holistic wellness.",
+    title: "ProTrainrAtHome - Professional Home Fitness Training",
+    description: "Expert home fitness training programs and personalized training plans. Transform your fitness journey from the comfort of your home with professional guidance.",
     type: "website",
   },
 };
