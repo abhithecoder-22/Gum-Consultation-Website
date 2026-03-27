@@ -47,18 +47,30 @@ const AboutPage = () => {
             <h2 className="font-display text-3xl mb-8 text-center">My Certifications</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="glass-card p-4 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image src="/assets/Certified-1.jpeg" alt="Postpartum Fitness Specialist Certification" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
                 <h3 className="font-semibold">Postpartum Fitness Specialist</h3>
                 <p className="text-primary text-sm">Women's Health Institute</p>
               </div>
               <div className="glass-card p-4 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image src="/assets/Certified-2.jpeg" alt="Prenatal & Postnatal Coach Certification" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
                 <h3 className="font-semibold">Prenatal & Postnatal Coach</h3>
                 <p className="text-primary text-sm">International Fitness Professionals</p>
               </div>
               <div className="glass-card p-4 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image src="/assets/Certified-3.png" alt="Women's Health Nutrition Certification" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
                 <h3 className="font-semibold">Women's Health Nutrition</h3>
                 <p className="text-primary text-sm">Nutrition for Women</p>
               </div>
               <div className="glass-card p-4 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image src="/assets/Certified-4.jpeg" alt="Pelvic Floor & Core Specialist Certification" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
                 <h3 className="font-semibold">Pelvic Floor & Core Specialist</h3>
                 <p className="text-primary text-sm">Functional Movement Academy</p>
               </div>

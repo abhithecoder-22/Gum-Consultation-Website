@@ -1,7 +1,7 @@
 import { Dumbbell, Users, Heart } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
-import whyChooseImg from "@/assets/why-choose.jpg";
+import whyChooseImg from "@/assets/gym-video-thumb.png";
 
 const WhyChooseSection = () => {
   return (

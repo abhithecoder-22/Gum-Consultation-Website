@@ -25,12 +25,14 @@ const Navbar = ({ onBookConsultation }: NavbarProps) => {
 
   const getNavLink = (item: string) => {
     if (item === "Programs") return "/programs";
+    if (item === "Training Plans") return "/training-plans";
     return `#${item.toLowerCase().replace(" ", "-")}`;
   };
 
   const isActive = (item: string) => {
     if (!mounted) return false;
     if (item === "Programs") return pathname === "/programs";
+    if (item === "Training Plans") return pathname === "/training-plans";
     return false;
   };
 

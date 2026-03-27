@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
+// import GlobalSection from "@/components/GlobalSection";
 import PricingSection from "@/components/PricingSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import CTASection from "@/components/CTASection";
@@ -23,6 +24,7 @@ const HomePage = () => {
       <AboutSection />
       <ServicesSection />
       <WhyChooseSection />
+      {/* <GlobalSection /> */}
       <PricingSection />
       <AchievementsSection />
       <CTASection onBookConsultation={() => setIsModalOpen(true)} />
