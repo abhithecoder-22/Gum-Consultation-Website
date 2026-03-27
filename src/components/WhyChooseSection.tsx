@@ -1,75 +1,60 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Dumbbell, Users, LayoutGrid, Heart } from "lucide-react";
+import { Dumbbell, Users, Heart } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
 import whyChooseImg from "@/assets/why-choose.jpg";
 
-const items = [
-  { icon: Dumbbell, title: "Safe, Science-Based Training", content: "Evidence-based programs for postpartum recovery and women's health, ensuring safe progress at every stage." },
-  { icon: Users, title: "Flexible Scheduling for Busy Moms", content: "Online sessions and at-home programs that fit your family schedule with no gym commitments." },
-  { icon: LayoutGrid, title: "Customized Programs", content: "Every program is tailored to your unique needs, whether postpartum or building sustainable habits." },
-  { icon: Heart, title: "Supportive Community", content: "Connect with other mothers through our private online community, sharing experiences and celebrating wins." },
-];
-
 const WhyChooseSection = () => {
-  const [openIndex, setOpenIndex] = useState(1);
-
   return (
     <section className="py-24">
       <div className="  px-4">
         <ScrollReveal>
-          <p className="section-label">Why Choose Us</p>
+          <p className="section-label">Transformation Programs</p>
           <h2 className="font-display text-4xl md:text-6xl mb-12 break-words md:break-normal">
-            WHY CLIENTS CHOOSE <span className="gradient-text">PROTRAINRATHOME</span>
+            12-WEEK <span className="gradient-text">TRANSFORMATION</span> PROGRAMS
           </h2>
         </ScrollReveal>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal direction="left">
-            <div className="relative rounded-2xl overflow-hidden h-80 lg:h-[500px]">
-              <Image fill src={whyChooseImg} alt="Modern gym equipment" className="object-cover" />
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Dumbbell className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl mb-2">Training + Nutrition + Mindfulness</h3>
+                  <p className="text-muted-foreground">Comprehensive programs combining progressive workouts, personalized meal plans, and mental wellness practices.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl mb-2">Personalized Support</h3>
+                  <p className="text-muted-foreground">Weekly check-ins, form corrections, and ongoing motivation from your dedicated coach.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl mb-2">Real Results</h3>
+                  <p className="text-muted-foreground">Proven methods that deliver sustainable transformations and long-term health benefits.</p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <button className="glow-button inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all">
+                  Explore Programs
+                </button>
+              </div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="space-y-4">
-              {items.map((item, i) => {
-                const Icon = item.icon;
-                const isOpen = openIndex === i;
-                return (
-                  <div
-                    key={item.title}
-                    className={`glass-card p-5 cursor-pointer transition-all duration-300 ${isOpen ? "border-primary/40" : ""}`}
-                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Icon className="w-5 h-5 text-primary" />
-                        <h3 className="font-semibold text-lg">{item.title}</h3>
-                      </div>
-                      <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                        <ChevronDown className="w-5 h-5 text-muted-foreground" />
-                      </motion.div>
-                    </div>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{item.content}</p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
+            <div className="relative rounded-2xl overflow-hidden h-80 lg:h-[500px]">
+              <Image fill src={whyChooseImg} alt="Transformation results" className="object-cover" />
             </div>
           </ScrollReveal>
         </div>

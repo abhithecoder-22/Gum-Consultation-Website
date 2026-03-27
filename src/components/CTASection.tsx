@@ -20,15 +20,15 @@ const CTASection = ({ onBookConsultation }: CTASectionProps) => {
 
       <div className="  px-4 relative z-10 text-center">
         <ScrollReveal>
-          <h2 className="font-display text-5xl md:text-7xl mb-6">START YOUR FITNESS TRANSFORMATION</h2>
+          <h2 className="font-display text-5xl md:text-7xl mb-6">CONFUSED WHERE TO START?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            Take the first step toward your fitness goals. Book a consultation and discover personalized training programs for your lifestyle.
+            Book a free consultation and get personalized guidance for your fitness journey.
           </p>
           <button
             onClick={onBookConsultation}
             className="glow-button inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:brightness-110 transition-all btn-pulse"
           >
-            Start Your Fitness Journey as a Mom Today <ArrowRight className="w-5 h-5" />
+            Book Now <ArrowRight className="w-5 h-5" />
           </button>
         </ScrollReveal>
       </div>

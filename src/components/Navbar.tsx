@@ -8,7 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logoImg from "@/assets/protrianrathome-logo.png";
 
-const navItems = ["About Us", "Programs", "Training Plans", "Contact Us"];
+const navItems = ["About Me", "Programs", "Training Plans", "Contact Us"];
 
 interface NavbarProps {
   onBookConsultation: () => void;
