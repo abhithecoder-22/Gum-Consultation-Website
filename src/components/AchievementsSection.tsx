@@ -22,15 +22,6 @@ const testimonials = [
 ];
 
 const AchievementsSection = () => {
-
-  const openModal = (cert: Certificate) => {
-    setSelectedCertificate(cert);
-  };
-
-  const closeModal = () => {
-    setSelectedCertificate(null);
-  };
-
   return (
     <section className="py-24">
       <div className="px-4">

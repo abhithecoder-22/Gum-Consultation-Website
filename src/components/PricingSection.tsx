@@ -47,7 +47,7 @@ const PricingSection = () => {
                     <div className="glass-card p-6 flex flex-col h-full transition-all duration-300 hover:-translate-y-2">
                       <h4 className="font-display text-xl mb-2">{option.name}</h4>
                       <div className="mb-4">
-                        {option.offerPrice ? (
+                        {'offerPrice' in option ? (
                           <>
                             <span className="font-display text-3xl line-through text-muted-foreground">₹{option.originalPrice}</span>
                             <span className="font-display text-4xl ml-2 text-primary">₹{option.offerPrice}</span>
